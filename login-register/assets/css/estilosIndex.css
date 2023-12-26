@@ -1,0 +1,58 @@
+/* Estilos para evitar conflictos con Bootstrap */
+body {
+  background-image: url(../images/bg1.jpg);
+  /* ...otros estilos para el cuerpo de la página... */
+}
+
+/* Estilos específicos para el navbar */
+header {
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  color: black !important;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+a:after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  height: 6px;
+  width: 0;
+  left: 0;
+  bottom: -2px;
+  transition: 0.3s;
+}
+
+a:hover:after {
+  width: 100%;
+}
+
+nav {
+  background-color: white;
+}
+
+.nav-item {
+  margin-left: 1rem;
+}
+
+ul {
+  justify-content: center;
+}
+
+/* Ajustes específicos para las columnas de Bootstrap */
+.row > * {
+  padding-right: 0;
+  padding-left: 0;
+  margin-top: var(--bs-gutter-y);
+}
+* {
+  /* border: 1px solid #000; Añade un borde negro de 1px a todos los elementos */
+}
