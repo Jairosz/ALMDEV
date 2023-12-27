@@ -56,3 +56,20 @@ ul {
 * {
   /* border: 1px solid #000; Añade un borde negro de 1px a todos los elementos */
 }
+
+.displayPecho {
+  display: none;
+}
+.displayEspalda {
+  display: none;
+}
+.displayPierna {
+  display: none;
+}
+.displayHombro {
+  display: none;
+}
+
+.oculto {
+  display: none;
+}

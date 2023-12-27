@@ -1,4 +1,3 @@
-//Ejecutando funciones
 document.getElementById("btn__iniciar-sesion").addEventListener("click", iniciarSesion);
 document.getElementById("btn__registrarse").addEventListener("click", register);
 window.addEventListener("resize", anchoPage);
@@ -64,28 +63,82 @@ function register() {
 }
 
 // TABLA DINÁMICA INDEX
+function mostrarPecho() {
+    var divPecho = document.getElementById("PECHO");
+    var divEspalda = document.getElementById("ESPALDA");
+    var divPierna = document.getElementById("PIERNA");
+    var divHombro = document.getElementById("HOMBRO");
+
+
+
+    divPecho.classList.remove("oculto");
+    divEspalda.classList.add("oculto");
+    divPierna.classList.add("oculto");
+    divHombro.classList.add("oculto");
+}
+function mostrarEspalda() {
+    var divPecho = document.getElementById("PECHO");
+    var divEspalda = document.getElementById("ESPALDA");
+    var divPierna = document.getElementById("PIERNA");
+    var divHombro = document.getElementById("HOMBRO");
+
+
+
+    divPecho.classList.add("oculto");
+    divEspalda.classList.remove("oculto");
+    divPierna.classList.add("oculto");
+    divHombro.classList.add("oculto");
+}
+function mostrarPierna() {
+    var divPecho = document.getElementById("PECHO");
+    var divEspalda = document.getElementById("ESPALDA");
+    var divPierna = document.getElementById("PIERNA");
+    var divHombro = document.getElementById("HOMBRO");
+
+
+
+    divPecho.classList.add("oculto");
+    divEspalda.classList.add("oculto");
+    divPierna.classList.remove("oculto");
+    divHombro.classList.add("oculto");
+}
+function mostrarHombro() {
+    var divPecho = document.getElementById("PECHO");
+    var divEspalda = document.getElementById("ESPALDA");
+    var divPierna = document.getElementById("PIERNA");
+    var divHombro = document.getElementById("HOMBRO");
+
+
+
+    divPecho.classList.add("oculto");
+    divEspalda.classList.add("oculto");
+    divPierna.classList.add("oculto");
+    divHombro.classList.remove("oculto");
+}
+
+
 var contadorFilas = 1;
 
-function agregarFila() {
+function agregarFilaPecho() {
     var tablaBody = document.getElementById("tablaBody");
 
     var ejercicio = document.getElementById("selectEjercicio").value;
     var kgRM = document.getElementById("kgRM").value;
     var kgSeries = document.getElementById("kgSeries").value;
-    var fecha = new Date().toLocaleDateString(); 
+    var fecha = new Date().toLocaleDateString();
 
 
     if (ejercicio == 1) {
         ejercicio = "Press Banca";
     } else if (ejercicio == 2) {
         ejercicio = "Press Inclinado";
-    }else if (ejercicio == 3) {
+    } else if (ejercicio == 3) {
         ejercicio = "Fondos";
-    }else if (ejercicio == 4) {
+    } else if (ejercicio == 4) {
         ejercicio = "Contractora";
-    }else if (ejercicio == 5) {
+    } else if (ejercicio == 5) {
         ejercicio = "Triceps";
-    }else if (ejercicio == "Listado de Ejercicios") {
+    } else if (ejercicio == "Listado de Ejercicios") {
         alert('Selecciona un ejercicio valido perro');
         return;
     }
@@ -96,7 +149,7 @@ function agregarFila() {
         "<td>" + ejercicio + "</td>" +
         "<td>" + kgRM + " KGs</td>" +
         "<td>" + kgSeries + " KGs</td>" +
-        "<td>" + fecha + "</td>" + 
+        "<td>" + fecha + "</td>" +
         "<td><button onclick=\"eliminarFila('fila-" + contadorFilas + "')\">Eliminar</button></td>" +
         "</tr>";
 
