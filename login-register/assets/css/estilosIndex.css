@@ -57,19 +57,21 @@ ul {
   /* border: 1px solid #000; Añade un borde negro de 1px a todos los elementos */
 }
 
-.displayPecho {
-  display: none;
-}
-.displayEspalda {
-  display: none;
-}
-.displayPierna {
-  display: none;
-}
-.displayHombro {
-  display: none;
-}
-
 .oculto {
   display: none;
+}
+.btn.btn-primary {
+  font-family: "Poppins", sans-serif;
+  color: black; 
+  background-color: white !important; 
+  border-color: white;
+}
+.btn.btn-primary:hover {
+  font-family: "Poppins", sans-serif;
+  color: white; 
+  background-color: black !important; 
+  border-color: black; 
+}
+.btn-custom-width {
+  width: 250px; 
 }
