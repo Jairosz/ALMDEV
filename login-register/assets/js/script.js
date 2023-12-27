@@ -272,7 +272,9 @@ function agregarFilaPecho() {
         "<td>" + kgRM + " KGs</td>" +
         "<td>" + kgSeries + " KGs</td>" +
         "<td>" + fecha + "</td>" +
-        "<td><button onclick=\"eliminarFila('fila-" + contadorFilas + "')\">Eliminar</button></td>" +
+        "<td>" +
+        "<button type='button' class='btn btn-primary2'  onclick=\"eliminarFila('fila-" + contadorFilas + "')\">Eliminar</button>" +
+        "</td>" +
         "</tr>";
 
     tablaBody.innerHTML += nuevaFila;
@@ -315,14 +317,16 @@ function agregarFilaEspalda() {
     contadorFilas++;
 
     var nuevaFila = "<tr id='fila-" + contadorFilas + "'>" +
-        "<td>" + ejercicio + "</td>" +
-        "<td>" + kgRM + " KGs</td>" +
-        "<td>" + kgSeries + " KGs</td>" +
-        "<td>" + fecha + "</td>" +
-        "<td><button onclick=\"eliminarFila('fila-" + contadorFilas + "')\">Eliminar</button></td>" +
-        "</tr>";
+    "<td>" + ejercicio + "</td>" +
+    "<td>" + kgRM + " KGs</td>" +
+    "<td>" + kgSeries + " KGs</td>" +
+    "<td>" + fecha + "</td>" +
+    "<td>" +
+    "<button type='button' class='btn btn-primary2'  onclick=\"eliminarFila('fila-" + contadorFilas + "')\">Eliminar</button>" +
+    "</td>" +
+    "</tr>";
 
-    tablaBody.innerHTML += nuevaFila;
+tablaBody.innerHTML += nuevaFila;
 }
 
 function agregarFilaPierna() {
@@ -358,10 +362,13 @@ function agregarFilaPierna() {
         "<td>" + kgRM + " KGs</td>" +
         "<td>" + kgSeries + " KGs</td>" +
         "<td>" + fecha + "</td>" +
-        "<td><button onclick=\"eliminarFila('fila-" + contadorFilas + "')\">Eliminar</button></td>" +
+        "<td>" +
+        "<button type='button' class='btn btn-primary2'  onclick=\"eliminarFila('fila-" + contadorFilas + "')\">Eliminar</button>" +
+        "</td>" +
         "</tr>";
 
     tablaBody.innerHTML += nuevaFila;
+
 }
 function agregarFilaHombro() {
     var tablaBody = document.getElementById("tablaBodyHombro");
@@ -377,10 +384,10 @@ function agregarFilaHombro() {
         ejercicio = "Piramide";
     } else if (ejercicio == 3) {
         ejercicio = "Hombro con huevos negros";
-    }else if (ejercicio == "Listado de Ejercicios DIA 4") {
+    } else if (ejercicio == "Listado de Ejercicios DIA 4") {
         alert('Selecciona un ejercicio valido perro');
         return;
-    } 
+    }
 
 
     contadorFilas++;
@@ -390,7 +397,9 @@ function agregarFilaHombro() {
         "<td>" + kgRM + " KGs</td>" +
         "<td>" + kgSeries + " KGs</td>" +
         "<td>" + fecha + "</td>" +
-        "<td><button onclick=\"eliminarFila('fila-" + contadorFilas + "')\">Eliminar</button></td>" +
+        "<td>" +
+        "<button type='button' class='btn btn-primary2'  onclick=\"eliminarFila('fila-" + contadorFilas + "')\">Eliminar</button>" +
+        "</td>" +
         "</tr>";
 
     tablaBody.innerHTML += nuevaFila;

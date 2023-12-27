@@ -72,6 +72,18 @@ ul {
   background-color: black !important; 
   border-color: black; 
 }
+.btn.btn-primary2 {
+  font-family: "Poppins", sans-serif;
+  color: white; 
+  background-color: black !important; 
+  border-color: black;
+}
+.btn.btn-primary2:hover {
+  font-family: "Poppins", sans-serif;
+  color: black; 
+  background-color: rgb(36, 181, 228)!important; 
+  border-color: rgb(36, 181, 228);
+}
 .btn-custom-width {
   width: 250px; 
 }

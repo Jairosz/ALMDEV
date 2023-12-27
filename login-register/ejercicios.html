@@ -1,0 +1,324 @@
+<!-- <?php
+session_start();
+if (empty($_SESSION['USER'])) {
+  header("location: ./login.html");
+  exit();
+}
+?> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS v5.2.1 -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./assets/css/estilosIndex.css" />
+  <script src="./assets/js/script.js"></script>
+  <style>
+    .container-fluid {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
+    h1 {
+      text-align: center;
+      font-family: "Poppins", sans-serif;
+      font-weight: bold;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <header>
+      <nav class="navbar navbar-expand-md navbar-light banner-color">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item nav-item-separation">
+                <a class="nav-link nav-item-color" href="ejercicios.html">Ejercicios</a>
+              </li>
+              <li class="nav-item nav-item-separation">
+                <a class="nav-link nav-item-color" href="d">Dieta</a>
+              </li>
+              <li class="nav-item nav-item-separation">
+                <a class="nav-link nav-item-color" href="#">Rutina</a>
+              </li>
+              <li class="nav-item nav-item-separation">
+                <a class="nav-link nav-item-color" href="#">Progreso</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <br />
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <div class="row">
+          <div class="col-3">
+            <button type="button" class="btn btn-primary btn-custom-width" onclick="mostrarPecho()">
+              DÍA 1 (PECHO / TRICEPS)
+            </button>
+          </div>
+          <div class="col-3">
+            <button type="button" class="btn btn-primary btn-custom-width" onclick="mostrarEspalda()">
+              DÍA 2 (ESPALDA / BICEPS)
+            </button>
+          </div>
+          <div class="col-3">
+            <button type="button" class="btn btn-primary btn-custom-width" onclick="mostrarPierna()">
+              DÍA 3 (PIERNA)
+            </button>
+          </div>
+          <div class="col-3">
+            <button type="button" class="btn btn-primary btn-custom-width" onclick="mostrarHombro()">
+              DÍA 4 (HOMBRO)
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-6">
+        <!-- INICIO PECHO  -->
+        <div class="oculto" id="PECHO">
+          <h1>DÍA 1 (PUSH)</h1>
+          <table class="table" id="tablaEjercicios">
+            <thead>
+              <tr>
+                <th>EJERCICIO</th>
+                <th>RM</th>
+                <th>SERIES</th>
+                <th>FECHA</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaBodyPecho">
+              <!-- JS  -->
+            </tbody>
+          </table>
+        </div>
+        <!-- FIN PECHO  -->
+        <div class="oculto" id="ESPALDA">
+          <h1>DÍA 2 (ESPALDA)</h1>
+          <table class="table" id="tablaEjercicios">
+            <thead>
+              <tr>
+                <th>EJERCICIO</th>
+                <th>RM</th>
+                <th>SERIES</th>
+                <th>FECHA</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaBodyEspalda">
+              <!-- JS  -->
+            </tbody>
+          </table>
+        </div>
+        <div class="oculto" id="PIERNA">
+          <h1>DÍA 3 (PIERNA)</h1>
+          <table class="table" id="tablaEjercicios">
+            <thead>
+              <tr>
+                <th>EJERCICIO</th>
+                <th>RM</th>
+                <th>SERIES</th>
+                <th>FECHA</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaBodyPierna">
+              <!-- JS  -->
+            </tbody>
+          </table>
+        </div>
+        <div class="oculto" id="HOMBRO">
+          <h1>DÍA 4 (HOMBRO)</h1>
+          <table class="table" id="tablaEjercicios">
+            <thead>
+              <tr>
+                <th>EJERCICIO</th>
+                <th>RM</th>
+                <th>SERIES</th>
+                <th>FECHA</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaBodyHombro">
+              <!-- JS  -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-3">
+        <!-- Contenido de la columna de ancho 3 -->
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-2 px-2">
+        <div class="oculto" id="PECHO2">
+          <select id="selectEjercicioPecho" class="form-select" aria-label="Default select example">
+            <option selected>Listado de Ejercicios DIA 1</option>
+            <option value="1">Press Banca</option>
+            <option value="2">Press Inclinado</option>
+            <option value="3">Fondos</option>
+            <option value="4">Contractora</option>
+            <option value="5">Triceps</option>
+          </select>
+        </div>
+        <div class="oculto" id="ESPALDA2">
+          <select id="selectEjercicioEspalda" class="form-select" aria-label="Default select example">
+            <option selected>Listado de Ejercicios DIA 2</option>
+            <option value="1">Remo</option>
+            <option value="2">Remo 90º</option>
+            <option value="3">Remo 90º abierto</option>
+            <option value="4">Jalón</option>
+            <option value="5">Biceps Máquina</option>
+            <option value="6">Biceps Martillo</option>
+            <option value="7">Curl de biceps</option>
+          </select>
+        </div>
+        <div class="oculto" id="PIERNA2">
+          <select id="selectEjercicioPierna" class="form-select" aria-label="Default select example">
+            <option selected>Listado de Ejercicios DIA 3</option>
+            <option value="1">Sentadilla</option>
+            <option value="2">Prensa</option>
+            <option value="3">Cuadriceps</option>
+            <option value="4">Isquios</option>
+            <option value="5">Gemelo</option>
+            <option value="6">Soleo</option>
+          </select>
+        </div>
+        <div class="oculto" id="HOMBRO2">
+          <select id="selectEjercicioHombro" class="form-select" aria-label="Default select example">
+            <option selected>Listado de Ejercicios DIA 4</option>
+            <option value="1">Press militar</option>
+            <option value="2">Piramide</option>
+            <option value="3">Hombro con huevos negros</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-2 px-2">
+        <div class="oculto" id="PECHO3">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">KG</span>
+            <input id="kgRMPecho" type="text" class="form-control" placeholder="KG's en RM" aria-label="Username"
+              aria-describedby="basic-addon1" />
+          </div>
+        </div>
+        <div class="oculto" id="ESPALDA3">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">KG</span>
+            <input id="kgRMEspalda" type="text" class="form-control" placeholder="KG's en RM" aria-label="Username"
+              aria-describedby="basic-addon1" />
+          </div>
+        </div>
+        <div class="oculto" id="PIERNA3">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">KG</span>
+            <input id="kgRMPierna" type="text" class="form-control" placeholder="KG's en RM" aria-label="Username"
+              aria-describedby="basic-addon1" />
+          </div>
+        </div>
+        <div class="oculto" id="HOMBRO3">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">KG</span>
+            <input id="kgRMHombro" type="text" class="form-control" placeholder="KG's en RM" aria-label="Username"
+              aria-describedby="basic-addon1" />
+          </div>
+        </div>
+      </div>
+      <div class="col-2 px-2">
+        <div class="oculto" id="PECHO4">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">KG</span>
+            <input id="kgSeriesPecho" type="text" class="form-control" placeholder="KG's en Series"
+              aria-label="Username" aria-describedby="basic-addon1" />
+          </div>
+        </div>
+        <div class="oculto" id="ESPALDA4">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">KG</span>
+            <input id="kgSeriesEspalda" type="text" class="form-control" placeholder="KG's en Series"
+              aria-label="Username" aria-describedby="basic-addon1" />
+          </div>
+        </div>
+        <div class="oculto" id="PIERNA4">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">KG</span>
+            <input id="kgSeriesPierna" type="text" class="form-control" placeholder="KG's en Series"
+              aria-label="Username" aria-describedby="basic-addon1" />
+          </div>
+        </div>
+        <div class="oculto" id="HOMBRO4">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">KG</span>
+            <input id="kgSeriesHombro" type="text" class="form-control" placeholder="KG's en Series"
+              aria-label="Username" aria-describedby="basic-addon1" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-1 offset-5 mx-auto">
+        <div class="oculto" id="PECHO5">
+          <button type="button" onclick="agregarFilaPecho()" class="btn btn-primary" data-bs-toggle="button"
+            aria-pressed="false" autocomplete="off">
+            Añadir
+          </button>
+        </div>
+        <div class="oculto" id="ESPALDA5">
+          <button type="button" onclick="agregarFilaEspalda()" class="btn btn-primary" data-bs-toggle="button"
+            aria-pressed="false" autocomplete="off">
+            Añadir
+          </button>
+        </div>
+        <div class="oculto" id="PIERNA5">
+          <button type="button" onclick="agregarFilaPierna()" class="btn btn-primary" data-bs-toggle="button"
+            aria-pressed="false" autocomplete="off">
+            Añadir
+          </button>
+        </div>
+        <div class="oculto" id="HOMBRO5">
+          <button type="button" onclick= "agregarFilaHombro()" class="btn btn-primary" data-bs-toggle="button"
+            aria-pressed="false" autocomplete="off">
+            Añadir
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

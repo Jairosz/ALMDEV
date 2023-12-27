@@ -19,7 +19,7 @@ if(mysqli_num_rows($queryResult) > 0) {
     session_start();
     $_SESSION['USER'] = mysqli_fetch_assoc($queryResult); 
     // print_r($_SESSION['USER']);
-    header("location: ../index.php");
+    header("location: ../ejercicios.html");
     exit();
 } else {
     header("location: ../login.html");
