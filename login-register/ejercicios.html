@@ -35,6 +35,17 @@ if (empty($_SESSION['USER'])) {
       font-weight: bold;
       color: black;
     }
+
+    p {
+      font-size: 1.3rem;
+      text-align: center;
+    }
+
+    .ejemplo {
+      text-align: center;
+      list-style: none;
+      font-weight: bold;
+    }
   </style>
 </head>
 
@@ -52,7 +63,7 @@ if (empty($_SESSION['USER'])) {
                 <a class="nav-link nav-item-color" href="ejercicios.html">Ejercicios</a>
               </li>
               <li class="nav-item nav-item-separation">
-                <a class="nav-link nav-item-color" href="d">Dieta</a>
+                <a class="nav-link nav-item-color" href="dieta.html">Dieta</a>
               </li>
               <li class="nav-item nav-item-separation">
                 <a class="nav-link nav-item-color" href="#">Rutina</a>
@@ -69,26 +80,28 @@ if (empty($_SESSION['USER'])) {
     <div class="row">
       <div class="col-3"></div>
       <div class="col-6">
-        <div class="row">
-          <div class="col-3">
-            <button type="button" class="btn btn-primary btn-custom-width" onclick="mostrarPecho()">
-              DÍA 1 (PECHO / TRICEPS)
-            </button>
-          </div>
-          <div class="col-3">
-            <button type="button" class="btn btn-primary btn-custom-width" onclick="mostrarEspalda()">
-              DÍA 2 (ESPALDA / BICEPS)
-            </button>
-          </div>
-          <div class="col-3">
-            <button type="button" class="btn btn-primary btn-custom-width" onclick="mostrarPierna()">
-              DÍA 3 (PIERNA)
-            </button>
-          </div>
-          <div class="col-3">
-            <button type="button" class="btn btn-primary btn-custom-width" onclick="mostrarHombro()">
-              DÍA 4 (HOMBRO)
-            </button>
+        <div id="section" class="section oculto">
+          <div class="row">
+            <div class="col-3">
+              <button type="button" class="btn btn-primary btn-custom-width" onclick="mostrarPecho()">
+                DÍA 1 (PECHO / TRÍCEPS)
+              </button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn btn-primary btn-custom-width" onclick="mostrarEspalda()">
+                DÍA 2 (ESPALDA / BÍCEPS)
+              </button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn btn-primary btn-custom-width" onclick="mostrarPierna()">
+                DÍA 3 (PIERNA)
+              </button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn btn-primary btn-custom-width" onclick="mostrarHombro()">
+                DÍA 4 (HOMBRO)
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -100,80 +113,121 @@ if (empty($_SESSION['USER'])) {
     <div class="row">
       <div class="col-3"></div>
       <div class="col-6">
-        <!-- INICIO PECHO  -->
-        <div class="oculto" id="PECHO">
-          <h1>DÍA 1 (PUSH)</h1>
-          <table class="table" id="tablaEjercicios">
-            <thead>
-              <tr>
-                <th>EJERCICIO</th>
-                <th>RM</th>
-                <th>SERIES</th>
-                <th>FECHA</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody id="tablaBodyPecho">
-              <!-- JS  -->
-            </tbody>
-          </table>
-        </div>
-        <!-- FIN PECHO  -->
-        <div class="oculto" id="ESPALDA">
-          <h1>DÍA 2 (ESPALDA)</h1>
-          <table class="table" id="tablaEjercicios">
-            <thead>
-              <tr>
-                <th>EJERCICIO</th>
-                <th>RM</th>
-                <th>SERIES</th>
-                <th>FECHA</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody id="tablaBodyEspalda">
-              <!-- JS  -->
-            </tbody>
-          </table>
-        </div>
-        <div class="oculto" id="PIERNA">
-          <h1>DÍA 3 (PIERNA)</h1>
-          <table class="table" id="tablaEjercicios">
-            <thead>
-              <tr>
-                <th>EJERCICIO</th>
-                <th>RM</th>
-                <th>SERIES</th>
-                <th>FECHA</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody id="tablaBodyPierna">
-              <!-- JS  -->
-            </tbody>
-          </table>
-        </div>
-        <div class="oculto" id="HOMBRO">
-          <h1>DÍA 4 (HOMBRO)</h1>
-          <table class="table" id="tablaEjercicios">
-            <thead>
-              <tr>
-                <th>EJERCICIO</th>
-                <th>RM</th>
-                <th>SERIES</th>
-                <th>FECHA</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody id="tablaBodyHombro">
-              <!-- JS  -->
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <div class="col-3">
-        <!-- Contenido de la columna de ancho 3 -->
-      </div>
+        <div id="explanation" class="">
+          <div class="row">
+            <div class="col-8">
+              <h1 style="text-align: center;">¿Cómo funciona?</h1>
+              <br>
+              <p>En el menú de selección superior, podrás elegir sobre que día quieres introducir los datos</p>
+              <img class="flecha" src="./assets/images/flecha1.png" alt="">
+            </div>
+            <div class="col-4 px-5">
+              <img class="py-2" src="./assets/images/IMG2.png" alt="" srcset="">
+              <img class="py-2" src="./assets/images/IMG3.png" alt="" srcset="">
+              <img class="py-2" src="./assets/images/IMG4.png" alt="" srcset="">
+            </div>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-4 px-4">
+              <img class="tabla" src="./assets/images/IMG5.png" alt="" srcset="">
+            </div>
+            <div class="col-8 px-5 d-flex flex-column justify-content-center align-items-center">
+              <h1 style="text-align: center;">Insertar los datos.</h1>
+              <p>Aparecerá una tabla, en esta habrá 5 columnas.</p>
+              <ul class="ejemplo">
+                <li>Columna de Ejercicios</li>
+                <li>Columna de kgs en repetición máxima (RM)</li>
+                <li>Columna de kgs en series</li>
+                <li>Columna de fechas de los datos introducidos</li>
+                <li>Columna de acciones (Eliminar la fila)</li>
+              </ul>
+              <br>
+              <p>Una vez rellenados los datos a introducir en el campo inferior de la tabla, solo tendrás que darle al
+                botón añadir</p>
+              <br>
+              <p style="font-weight: bold;">¿Entendido?</p>
+              <button type="button" class="btn btn-primary btn-custom-width" onclick="entendido()">
+                Entendido
+              </button>
+            </div>
+          </div>
+    </div>
+    <!-- INICIO PECHO  -->
+    <div class="oculto" id="PECHO">
+      <h1>DÍA 1 (PUSH)</h1>
+      <table class="table" id="tablaEjercicios">
+        <thead>
+          <tr>
+            <th>EJERCICIO</th>
+            <th>RM</th>
+            <th>SERIES</th>
+            <th>FECHA</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaBodyPecho">
+          <!-- JS  -->
+        </tbody>
+      </table>
+    </div>
+    <!-- FIN PECHO  -->
+    <div class="oculto" id="ESPALDA">
+      <h1>DÍA 2 (ESPALDA)</h1>
+      <table class="table" id="tablaEjercicios">
+        <thead>
+          <tr>
+            <th>EJERCICIO</th>
+            <th>RM</th>
+            <th>SERIES</th>
+            <th>FECHA</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaBodyEspalda">
+          <!-- JS  -->
+        </tbody>
+      </table>
+    </div>
+    <div class="oculto" id="PIERNA">
+      <h1>DÍA 3 (PIERNA)</h1>
+      <table class="table" id="tablaEjercicios">
+        <thead>
+          <tr>
+            <th>EJERCICIO</th>
+            <th>RM</th>
+            <th>SERIES</th>
+            <th>FECHA</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaBodyPierna">
+          <!-- JS  -->
+        </tbody>
+      </table>
+    </div>
+    <div class="oculto" id="HOMBRO">
+      <h1>DÍA 4 (HOMBRO)</h1>
+      <table class="table" id="tablaEjercicios">
+        <thead>
+          <tr>
+            <th>EJERCICIO</th>
+            <th>RM</th>
+            <th>SERIES</th>
+            <th>FECHA</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaBodyHombro">
+          <!-- JS  -->
+        </tbody>
+      </table>
+    </div>
+    <div class="col-3">
+      <!-- Contenido de la columna de ancho 3 -->
     </div>
     <br />
     <br />
@@ -185,8 +239,8 @@ if (empty($_SESSION['USER'])) {
     <br />
     <br />
     <div class="row">
-      <div class="col-3"></div>
-      <div class="col-2 px-2">
+      <div class="col-2"></div>
+      <div class="col-3 px-2">
         <div class="oculto" id="PECHO2">
           <select id="selectEjercicioPecho" class="form-select" aria-label="Default select example">
             <option selected>Listado de Ejercicios DIA 1</option>
@@ -229,7 +283,7 @@ if (empty($_SESSION['USER'])) {
           </select>
         </div>
       </div>
-      <div class="col-2 px-2">
+      <div class="col-3 px-2">
         <div class="oculto" id="PECHO3">
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">KG</span>
@@ -259,7 +313,7 @@ if (empty($_SESSION['USER'])) {
           </div>
         </div>
       </div>
-      <div class="col-2 px-2">
+      <div class="col-3 px-2">
         <div class="oculto" id="PECHO4">
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">KG</span>
@@ -311,7 +365,7 @@ if (empty($_SESSION['USER'])) {
           </button>
         </div>
         <div class="oculto" id="HOMBRO5">
-          <button type="button" onclick= "agregarFilaHombro()" class="btn btn-primary" data-bs-toggle="button"
+          <button type="button" onclick="agregarFilaHombro()" class="btn btn-primary" data-bs-toggle="button"
             aria-pressed="false" autocomplete="off">
             Añadir
           </button>

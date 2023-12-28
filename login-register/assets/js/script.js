@@ -25,10 +25,7 @@ function anchoPage() {
         formulario_register.style.display = "none";
     }
 }
-
 anchoPage();
-
-
 function iniciarSesion() {
     if (window.innerWidth > 850) {
         formulario_login.style.display = "block";
@@ -61,7 +58,22 @@ function register() {
         caja_trasera_login.style.opacity = "1";
     }
 }
-
+function entendido(){
+    var divPecho = document.getElementById("PECHO");
+    var divPecho2 = document.getElementById("PECHO2");
+    var divPecho3 = document.getElementById("PECHO3");
+    var divPecho4 = document.getElementById("PECHO4");
+    var divPecho5 = document.getElementById("PECHO5");
+   var explanation = document.getElementById("explanation");
+    var section = document.getElementById("section");
+   explanation.classList.add("oculto");
+   divPecho.classList.remove("oculto");
+   divPecho2.classList.remove("oculto");
+   divPecho3.classList.remove("oculto");
+   divPecho4.classList.remove("oculto");
+   divPecho5.classList.remove("oculto");
+   section.classList.remove("oculto");
+}
 // TABLA DINÁMICA INDEX
 function mostrarPecho() {
     var divPecho = document.getElementById("PECHO");
@@ -84,7 +96,6 @@ function mostrarPecho() {
     var divEspalda5 = document.getElementById("ESPALDA5");
     var divPierna5 = document.getElementById("PIERNA5");
     var divHombro5 = document.getElementById("HOMBRO5");
-
     divPecho.classList.remove("oculto");
     divEspalda.classList.add("oculto");
     divPierna.classList.add("oculto");
@@ -105,7 +116,6 @@ function mostrarPecho() {
     divEspalda5.classList.add("oculto");
     divPierna5.classList.add("oculto");
     divHombro5.classList.add("oculto");
-
 }
 function mostrarEspalda() {
     var divPecho = document.getElementById("PECHO");
@@ -128,7 +138,6 @@ function mostrarEspalda() {
     var divEspalda5 = document.getElementById("ESPALDA5");
     var divPierna5 = document.getElementById("PIERNA5");
     var divHombro5 = document.getElementById("HOMBRO5");
-
     divPecho.classList.add("oculto");
     divEspalda.classList.remove("oculto");
     divPierna.classList.add("oculto");
@@ -171,7 +180,6 @@ function mostrarPierna() {
     var divEspalda5 = document.getElementById("ESPALDA5");
     var divPierna5 = document.getElementById("PIERNA5");
     var divHombro5 = document.getElementById("HOMBRO5");
-
     divPecho.classList.add("oculto");
     divEspalda.classList.add("oculto");
     divPierna.classList.remove("oculto");
@@ -214,7 +222,6 @@ function mostrarHombro() {
     var divEspalda5 = document.getElementById("ESPALDA5");
     var divPierna5 = document.getElementById("PIERNA5");
     var divHombro5 = document.getElementById("HOMBRO5");
-
     divPecho.classList.add("oculto");
     divEspalda.classList.add("oculto");
     divPierna.classList.add("oculto");
@@ -236,19 +243,13 @@ function mostrarHombro() {
     divPierna5.classList.add("oculto");
     divHombro5.classList.remove("oculto");
 }
-
-
 var contadorFilas = 1;
-
 function agregarFilaPecho() {
     var tablaBody = document.getElementById("tablaBodyPecho");
-
     var ejercicio = document.getElementById("selectEjercicioPecho").value;
     var kgRM = document.getElementById("kgRMPecho").value;
     var kgSeries = document.getElementById("kgSeriesPecho").value;
     var fecha = new Date().toLocaleDateString();
-
-
     if (ejercicio == 1) {
         ejercicio = "Press Banca";
     } else if (ejercicio == 2) {
@@ -263,10 +264,7 @@ function agregarFilaPecho() {
         alert('Selecciona un ejercicio valido perro');
         return;
     }
-
-
     contadorFilas++;
-
     var nuevaFila = "<tr id='fila-" + contadorFilas + "'>" +
         "<td>" + ejercicio + "</td>" +
         "<td>" + kgRM + " KGs</td>" +
@@ -279,7 +277,6 @@ function agregarFilaPecho() {
 
     tablaBody.innerHTML += nuevaFila;
 }
-
 function eliminarFila(idFila) {
     var fila = document.getElementById(idFila);
     fila.parentNode.removeChild(fila);
@@ -287,13 +284,10 @@ function eliminarFila(idFila) {
 
 function agregarFilaEspalda() {
     var tablaBody = document.getElementById("tablaBodyEspalda");
-
     var ejercicio = document.getElementById("selectEjercicioEspalda").value;
     var kgRM = document.getElementById("kgRMEspalda").value;
     var kgSeries = document.getElementById("kgSeriesEspalda").value;
     var fecha = new Date().toLocaleDateString();
-
-
     if (ejercicio == 1) {
         ejercicio = "Remo";
     } else if (ejercicio == 2) {
@@ -312,10 +306,7 @@ function agregarFilaEspalda() {
     } else if (ejercicio == 7) {
         ejercicio = "Curl de biceps";
     }
-
-
     contadorFilas++;
-
     var nuevaFila = "<tr id='fila-" + contadorFilas + "'>" +
     "<td>" + ejercicio + "</td>" +
     "<td>" + kgRM + " KGs</td>" +
@@ -325,10 +316,8 @@ function agregarFilaEspalda() {
     "<button type='button' class='btn btn-primary2'  onclick=\"eliminarFila('fila-" + contadorFilas + "')\">Eliminar</button>" +
     "</td>" +
     "</tr>";
-
 tablaBody.innerHTML += nuevaFila;
 }
-
 function agregarFilaPierna() {
     var tablaBody = document.getElementById("tablaBodyPierna");
 
@@ -336,8 +325,6 @@ function agregarFilaPierna() {
     var kgRM = document.getElementById("kgRMPierna").value;
     var kgSeries = document.getElementById("kgSeriesPierna").value;
     var fecha = new Date().toLocaleDateString();
-
-
     if (ejercicio == 1) {
         ejercicio = "Sentadilla";
     } else if (ejercicio == 2) {
@@ -354,9 +341,7 @@ function agregarFilaPierna() {
     } else if (ejercicio == 6) {
         ejercicio = "Soleo";
     }
-
     contadorFilas++;
-
     var nuevaFila = "<tr id='fila-" + contadorFilas + "'>" +
         "<td>" + ejercicio + "</td>" +
         "<td>" + kgRM + " KGs</td>" +
@@ -368,7 +353,6 @@ function agregarFilaPierna() {
         "</tr>";
 
     tablaBody.innerHTML += nuevaFila;
-
 }
 function agregarFilaHombro() {
     var tablaBody = document.getElementById("tablaBodyHombro");
@@ -376,8 +360,6 @@ function agregarFilaHombro() {
     var kgRM = document.getElementById("kgRMHombro").value;
     var kgSeries = document.getElementById("kgSeriesHombro").value;
     var fecha = new Date().toLocaleDateString();
-
-
     if (ejercicio == 1) {
         ejercicio = "Press Militar";
     } else if (ejercicio == 2) {
@@ -388,10 +370,7 @@ function agregarFilaHombro() {
         alert('Selecciona un ejercicio valido perro');
         return;
     }
-
-
     contadorFilas++;
-
     var nuevaFila = "<tr id='fila-" + contadorFilas + "'>" +
         "<td>" + ejercicio + "</td>" +
         "<td>" + kgRM + " KGs</td>" +
@@ -401,6 +380,5 @@ function agregarFilaHombro() {
         "<button type='button' class='btn btn-primary2'  onclick=\"eliminarFila('fila-" + contadorFilas + "')\">Eliminar</button>" +
         "</td>" +
         "</tr>";
-
     tablaBody.innerHTML += nuevaFila;
 }

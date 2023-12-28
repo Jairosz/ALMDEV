@@ -53,9 +53,6 @@ ul {
   padding-left: 0;
   margin-top: var(--bs-gutter-y);
 }
-* {
-  /* border: 1px solid #000; Añade un borde negro de 1px a todos los elementos */
-}
 
 .oculto {
   display: none;
@@ -85,5 +82,15 @@ ul {
   border-color: rgb(36, 181, 228);
 }
 .btn-custom-width {
-  width: 250px; 
+  width: 230px; 
+}
+.flecha {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+}
+.tabla {
+  position: absolute;
+  left: 13%;
+  top: 50%;
 }
